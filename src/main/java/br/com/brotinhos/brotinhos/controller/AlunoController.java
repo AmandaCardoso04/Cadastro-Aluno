@@ -50,9 +50,10 @@ public class AlunoController {
         return ResponseEntity.created(endereco).body(Aluno);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}") 
     @Transactional
     public ResponseEntity<AlunoDto> atualizar(@PathVariable @NotNull Long Id, @RequestBody @Valid AlunoDto dto){
+        
         AlunoDto atualizado = service.atualizarAluno(Id, dto);
 
         return ResponseEntity.ok(atualizado);
